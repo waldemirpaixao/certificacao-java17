@@ -70,7 +70,9 @@ public class Creating_And_Manipulating_Strings {
                 work_with_identation();
                 translating_escapes();
                 checking_for_empty_or_blank_strings();
-                
+                formatting_values();
+                method_chaining();
+
 
         }
 
@@ -201,15 +203,21 @@ public class Creating_And_Manipulating_Strings {
                                 + "  b\n"
                                 + " c";
 
-                System.out.println("The size of Character in the text block, consider count whitespace: " + textBlock.length());
-                System.out.println("The size of Character in the concat, consider count whitespace: " + concat.length());
+                System.out.println("The size of Character in the text block, consider count whitespace: "
+                                + textBlock.length());
+                System.out.println(
+                                "The size of Character in the concat, consider count whitespace: " + concat.length());
                 System.out.println("Adding n space in the begining at the text block " + textBlock.indent(1).length());
                 System.out.println(textBlock.indent(1));
-                System.out.println("The size of Character at the concat, consider count whitespace:  " + concat.indent(-1).length());
+                System.out.println("The size of Character at the concat, consider count whitespace:  "
+                                + concat.indent(-1).length());
                 System.out.println(concat.indent(-1));
-                System.out.println("The size of Character at the concat, consider count whitespace:  " + concat.indent(-4).length());
+                System.out.println("The size of Character at the concat, consider count whitespace:  "
+                                + concat.indent(-4).length());
                 System.out.println(concat.indent(-4));
-                System.out.println("Removing all the leading incidental whitespace at the concat, consider count whitespace:  " + concat.stripIndent().length());
+                System.out.println(
+                                "Removing all the leading incidental whitespace at the concat, consider count whitespace:  "
+                                                + concat.stripIndent().length());
                 System.out.println(concat.stripIndent());
 
         }
@@ -226,21 +234,72 @@ public class Creating_And_Manipulating_Strings {
 
         private void checking_for_empty_or_blank_strings() {
 
-                  System.out.println("=========================================================");
-                  System.out.println("Checking for empty or blank strings");
+                System.out.println("=========================================================");
+                System.out.println("Checking for empty or blank strings");
 
-
-               System.out.println("Without space " + "".isEmpty()); 
-               System.out.println("With space " + " ".isEmpty()); 
-               System.out.println("Without Blank space " + "".isBlank());
-                 System.out.println("With Blank space " + " ".isBlank());
+                System.out.println("Without space " + "".isEmpty());
+                System.out.println("With space " + " ".isEmpty());
+                System.out.println("Without Blank space " + "".isBlank());
+                System.out.println("With Blank space " + " ".isBlank());
 
         }
 
         private void formatting_values() {
+
+                System.out.println("=========================================================");
+                System.out.println("Formatting values");
+                var name = "Waldemir";
+
+                var orderId = 5;
+                System.out.println("Without using format method");
+                System.out.println("Hello " + name + ", order " + orderId + " is ready!");
+                System.out.println("With using format method");
+                System.out.println(String.format("Hello %s, order %d is ready!", name, orderId));
+
+                System.out.println("With using formatted method");
+                System.out.println("Hello %s, order %d is ready".formatted(name, orderId));
+
+                var nome = "James";
+                var score = 90.25;
+                var total = 100;
+
+                System.out.println("%s:%n    Score: %.1f out of %d".formatted(nome, score, total));
+
+                // mistakes
+                // System.out.println("%s:%n Score: %d out of %d".formatted(nome, score,
+                // total));//java.util.IllegalFormatConversionException: f != d
+
+                var pi = 3.14159265358979323846;
+                System.out.format("[%f]", pi);
+                System.out.format("[%12.8f]", pi);
+                System.out.format("[%012f]", pi);
+                System.out.format("[%12.2f]", pi);
+                System.out.format("[%.2f]", pi);
+
         }
 
         private void method_chaining() {
+
+                 System.out.println("=========================================================");
+                System.out.println("Method chaining");
+
+                var start = "AniMaL";
+                var trimmed = start.trim();
+                var lowercased = trimmed.toLowerCase();
+                var result = lowercased.replace("a","A");
+                System.out.println(result);
+
+                String result2 = "AniMaL".trim().toLowerCase().replace("a","A");
+                System.out.println(result2);
+
+                String a  = "abc";
+                String b = a.toUpperCase();
+                b = b.replace("B", "2").replace('C', '3');
+                System.out.println("a=" + a);
+                System.out.println("b=" + b);
+
+
+
         }// este método não tem sub categorias
 
 }
