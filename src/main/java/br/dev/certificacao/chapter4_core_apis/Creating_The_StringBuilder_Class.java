@@ -121,7 +121,11 @@ public class Creating_The_StringBuilder_Class {
     private void important_stringBuilder_methods() {
 
         using_commom_methods();
-
+        appending_values();
+        inserting_data();
+        deleting_contents();
+        replacing_portions();
+        reversing();
     }
 
     private void using_commom_methods() {
@@ -132,6 +136,14 @@ public class Creating_The_StringBuilder_Class {
         System.out.println("-------------------------------");
 
         System.out.println("Take a look the code below:");
+        System.out.println(
+                """
+                                 var sb = new StringBuilder("Waldemir");
+                        System.out.println("Tamanho: " + sb.length());
+                        System.out.println("SubString(0,1): " + sb.substring(0, 1));
+                        System.out.println("Substring(indexOf(wa),indexOf(de): " + sb.substring(sb.indexOf("W"), sb.indexOf("de")));
+                        System.out.println("CharAt(0): " + sb.charAt(0));
+                                """);
 
         System.out.println("Take a look the result below:");
 
@@ -140,7 +152,98 @@ public class Creating_The_StringBuilder_Class {
         System.out.println("SubString(0,1): " + sb.substring(0, 1));
         System.out.println("Substring(indexOf(wa),indexOf(de): " + sb.substring(sb.indexOf("W"), sb.indexOf("de")));
         System.out.println("CharAt(0): " + sb.charAt(0));
-        
+
+    }
+
+    private void appending_values() {
+
+        System.out.println("");
+        System.out.println("Appending Values");
+        System.out.println("----------------");
+        System.out.println("Take a look the code below:");
+        System.out.println("""
+
+                var sb = new StringBuilder().append("waldemir").append(1).append(true);
+                sb.append("-").append(1);
+
+                System.out.println(sb);""");
+
+        var sb = new StringBuilder().append("waldemir").append(1).append(true);
+        sb.append("-").append(1);
+
+        System.out.println(sb);
+    }
+
+    private void inserting_data() {
+
+        System.out.println("");
+        System.out.println("Inserting Data");
+        System.out.println("----------------");
+        System.out.println("Take a look the code below:");
+
+        var sb = new StringBuilder("Roberto Santos");
+        sb.insert(0, "X").insert(7, "x");
+        System.out.println(sb);
+    }
+
+    private void deleting_contents() {
+
+        System.out.println("");
+        System.out.println("Deleting Data");
+        System.out.println("----------------");
+        System.out.println("Take a look the code below:");
+        System.out.println("""
+                    var sb = new StringBuilder("Waldemir");
+                System.out.println(sb.delete(1, 2));
+                System.out.println(sb.deleteCharAt(2));
+                System.out.println(sb.deleteCharAt(6));//StringIndexOutOfBoundsException
+                        """);
+
+        var sb = new StringBuilder("Waldemir");
+        System.out.println(sb.delete(1, 2));
+        System.out.println(sb.deleteCharAt(2));
+        System.out.println(sb.delete(1, 100));
+        // System.out.println(sb.deleteCharAt(6));// StringIndexOutOfBoundsException
+
+    }
+
+    private void replacing_portions() {
+
+        System.out.println("");
+
+        System.out.println("Important StringBuilder Methods");
+        System.out.println("-------------------------------");
+
+        System.out.println("Take a look the code below:");
+
+        System.out.println("""
+                var builder = new StringBuilder("Pigeon Dirty");
+                System.out.println(builder.replace(3,6, "sty"));
+                        """);
+
+        var builder = new StringBuilder("Pigeon Dirty");
+        System.out.println(builder.replace(3, 6, "sty"));
+
+    }
+
+    private void reversing() {
+
+           System.out.println("");
+
+        System.out.println("Reversing");
+        System.out.println("-------------------------------");
+
+        System.out.println("Take a look the code below:");
+        System.out.println("""
+                var sb = new StringBuilder("Waldemir");
+                sb.reverse();
+                System.out.println(sb);
+                        """);
+
+        var sb = new StringBuilder("Waldemir");
+        sb.reverse();
+        System.out.println(sb.toString());
+
     }
 
 }

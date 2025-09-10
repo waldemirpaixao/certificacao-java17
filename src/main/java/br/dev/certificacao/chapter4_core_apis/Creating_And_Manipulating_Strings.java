@@ -7,10 +7,14 @@ public class Creating_And_Manipulating_Strings {
                 Creating_And_Manipulating_Strings c = new Creating_And_Manipulating_Strings();
                 c.concatenation();
                 c.important_String_Methods();
-
+                c.understanding_equality();
         }
 
         public void concatenation() {
+                System.out.println("Concatenation");
+                System.out.println("=============================================================");
+                System.out.println("The + operator is used to concatenate String");
+                System.out.println("Take a look the code below:");
 
                 System.out.print("First rules both operands,1 + 2, are numbers, so we use normal addition. 1+2 = ");
                 System.out.println(1 + 2);
@@ -53,7 +57,14 @@ public class Creating_And_Manipulating_Strings {
                  * s += 2;
                  * s += "3";
                  * System.out.println(s);
+                 * 
                  */
+
+                // intern method
+                System.out.println("Using intern method");
+                System.out.println("===============================================================");
+
+                System.out.println("Intern Méthod" + " Hello".intern());
         }
 
         public void important_String_Methods() {
@@ -72,7 +83,6 @@ public class Creating_And_Manipulating_Strings {
                 checking_for_empty_or_blank_strings();
                 formatting_values();
                 method_chaining();
-
 
         }
 
@@ -116,6 +126,8 @@ public class Creating_And_Manipulating_Strings {
                 // System.out.println("Substring from 7 to the 20: " + name.substring(7,
                 // 29));//Exception in thread "main" java.lang.StringIndexOutOfBoundsException:
                 // begin 7, end 29, length 28
+                var valor = name.substring(5);
+                System.out.println(valor);
 
         }
 
@@ -280,26 +292,48 @@ public class Creating_And_Manipulating_Strings {
 
         private void method_chaining() {
 
-                 System.out.println("=========================================================");
+                System.out.println("=========================================================");
                 System.out.println("Method chaining");
 
                 var start = "AniMaL";
                 var trimmed = start.trim();
                 var lowercased = trimmed.toLowerCase();
-                var result = lowercased.replace("a","A");
+                var result = lowercased.replace("a", "A");
                 System.out.println(result);
 
-                String result2 = "AniMaL".trim().toLowerCase().replace("a","A");
+                String result2 = "AniMaL".trim().toLowerCase().replace("a", "A");
                 System.out.println(result2);
 
-                String a  = "abc";
+                String a = "abc";
                 String b = a.toUpperCase();
                 b = b.replace("B", "2").replace('C', '3');
                 System.out.println("a=" + a);
                 System.out.println("b=" + b);
 
-
-
         }// este método não tem sub categorias
+
+        public void understanding_equality() {
+
+                comparing_equals_and_same();
+
+        }
+
+        private void comparing_equals_and_same() {
+
+                System.out.println("=========================================================");
+                System.out.println("Comparing equals and same");
+                var one = new StringBuilder();
+                var two = new StringBuilder();
+                var three = one.append("a");
+
+                System.out.println(one == two);//false
+                System.out.println(one == three);//true
+
+
+                var x  = "Hello World";
+                var z = " Hello Wolrd".trim();
+                System.out.println(x.equals(z));
+
+        }
 
 }
