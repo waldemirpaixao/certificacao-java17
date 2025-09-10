@@ -322,6 +322,15 @@ public class Creating_And_Manipulating_Strings {
 
                 System.out.println("=========================================================");
                 System.out.println("Comparing equals and same");
+                System.out.println("Take a look the code below:");
+                System.out.println("""
+                                var one = new StringBuilder();
+                var two = new StringBuilder();
+                var three = one.append("a");
+
+                System.out.println(one == two);//false
+                System.out.println(one == three);//true
+                                """);
                 var one = new StringBuilder();
                 var two = new StringBuilder();
                 var three = one.append("a");
@@ -329,10 +338,38 @@ public class Creating_And_Manipulating_Strings {
                 System.out.println(one == two);//false
                 System.out.println(one == three);//true
 
+                System.out.println("=========================================================");
+                System.out.println("Comparing String with equals and == ");
+                System.out.println("Take a look the code below:");
+                System.out.println("Equals method compare the value of the string");
+                System.out.println("""
+                                var x  = "Hello World";
+                var z = " Hello World".trim();
+                System.out.println(x.equals(z));""");
 
-                var x  = "Hello World";
-                var z = " Hello Wolrd".trim();
-                System.out.println(x.equals(z));
+                System.out.println("Take a look the code below:");
+                System.out.println("""
+                                var name ="a";
+                var builder = new StringBuilder("a");
+                System.out.println(name == builder.toString());// false
+
+                var name ="a";
+                var builder = new StringBuilder("a");
+                System.out.println(name == builder);//doesn't compile because are incompatible types;
+                                """);
+
+                var name ="a";
+                var builder = new StringBuilder("a");
+                System.out.println(name == builder.toString());// false
+
+                /*var name ="a";
+                var builder = new StringBuilder("a");
+                System.out.println(name == builder);//doesn't compile because are incompatible types;*/
+
+                                
+                          
+
+               
 
         }
 
