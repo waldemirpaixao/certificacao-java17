@@ -1,5 +1,7 @@
 package br.dev.certificacao.chapter4_core_apis;
 
+import java.util.Arrays;
+
 public class Creating_And_Manipulating_Strings {
 
         public static void main(String[] asrgs) {
@@ -8,6 +10,7 @@ public class Creating_And_Manipulating_Strings {
                 c.concatenation();
                 c.important_String_Methods();
                 c.understanding_equality();
+                c.understanding_arrays();
         }
 
         public void concatenation() {
@@ -315,6 +318,7 @@ public class Creating_And_Manipulating_Strings {
         public void understanding_equality() {
 
                 comparing_equals_and_same();
+                the_string_pool();
 
         }
 
@@ -324,52 +328,147 @@ public class Creating_And_Manipulating_Strings {
                 System.out.println("Comparing equals and same");
                 System.out.println("Take a look the code below:");
                 System.out.println("""
-                                var one = new StringBuilder();
-                var two = new StringBuilder();
-                var three = one.append("a");
+                                                var one = new StringBuilder();
+                                var two = new StringBuilder();
+                                var three = one.append("a");
 
-                System.out.println(one == two);//false
-                System.out.println(one == three);//true
-                                """);
+                                System.out.println(one == two);//false
+                                System.out.println(one == three);//true
+                                                """);
                 var one = new StringBuilder();
                 var two = new StringBuilder();
                 var three = one.append("a");
 
-                System.out.println(one == two);//false
-                System.out.println(one == three);//true
+                System.out.println(one == two);// false
+                System.out.println(one == three);// true
 
                 System.out.println("=========================================================");
                 System.out.println("Comparing String with equals and == ");
                 System.out.println("Take a look the code below:");
                 System.out.println("Equals method compare the value of the string");
                 System.out.println("""
-                                var x  = "Hello World";
-                var z = " Hello World".trim();
-                System.out.println(x.equals(z));""");
+                                                var x  = "Hello World";
+                                var z = " Hello World".trim();
+                                System.out.println(x.equals(z));""");
 
                 System.out.println("Take a look the code below:");
                 System.out.println("""
+                                                var name ="a";
+                                var builder = new StringBuilder("a");
+                                System.out.println(name == builder.toString());// false
+
                                 var name ="a";
+                                var builder = new StringBuilder("a");
+                                System.out.println(name == builder);//doesn't compile because are incompatible types;
+                                                """);
+
+                var name = "a";
                 var builder = new StringBuilder("a");
                 System.out.println(name == builder.toString());// false
 
-                var name ="a";
-                var builder = new StringBuilder("a");
-                System.out.println(name == builder);//doesn't compile because are incompatible types;
-                                """);
+                /*
+                 * var name ="a";
+                 * var builder = new StringBuilder("a");
+                 * System.out.println(name == builder);//doesn't compile because are
+                 * incompatible types;
+                 */
 
-                var name ="a";
-                var builder = new StringBuilder("a");
-                System.out.println(name == builder.toString());// false
+        }
 
-                /*var name ="a";
-                var builder = new StringBuilder("a");
-                System.out.println(name == builder);//doesn't compile because are incompatible types;*/
+        private void the_string_pool() {
+                System.out.println("String pool");
 
-                                
-                          
+                var x = "Hello World";
+                var y = "Hello World";
+                System.out.println(x == y);
 
-               
+                var z = " Hello World".trim();
+                System.out.println(x == z);
+
+                var singleString = "hello world";
+                var concat = "hello";
+                concat += "world";
+                System.out.println(singleString == concat);
+
+                var w = "Hello Wold";
+                var a = new String("Hello Wold");
+
+                System.out.println(w == a);
+
+                var name = "Hello Wold";
+                var name2 = new String("Hello Wold").intern();
+
+                System.out.println(name == name2);
+
+                System.out.println("String pool with intern method");
+
+                var first = "rat" + 1;
+                var second = "r" + "a" + "t" + "1";
+                var third = "r" + "a" + "t" + new String("1");
+                System.out.println(first == second);
+                System.out.println(first == second.intern());
+                System.out.println(first == third);
+                System.out.println(first == third.intern());
+
+        }
+
+        private void understanding_arrays() {
+
+                creating_an_array_of_primitives();
+                creating_array_with_reference_variables();
+
+        }
+
+        private void creating_an_array_of_primitives() {
+
+                // Sem inicialização com números
+                int[] numbers = new int[3];
+
+                for (int numero : numbers) {
+
+                        System.out.println(numero);
+                }
+
+                // com inicialização de dados
+
+                int[] moreNumbers = new int[] { 42, 55, 99 };
+
+                for (int number : moreNumbers) {
+
+                        System.out.println(number);
+                }
+
+                //shortcut
+                int[] numero = {12,44,5};
+
+                //different tipes of write
+
+                int[] numeros;
+                int [] numeros1;
+                int []numeros2;
+                int numeros3[];
+                int numeros4 [];
+
+
+
+        }
+
+        private void creating_array_with_reference_variables(){
+
+                String[] bugs = {"cricket", "beetle", "ladybug"};
+
+                String[] alias = bugs;
+
+                String[] anotherArray = {"cricket", "beetle", "ladybug"};//present no livro da certificação java 21
+
+                System.out.println(bugs.equals(alias));
+                System.out.println(bugs.toString());
+                 System.out.println(bugs.equals(anotherArray));//present no livro da certificação java 21
+
+                 //imprimind array 
+
+                System.out.println(Arrays.toString(bugs));
+
 
         }
 
