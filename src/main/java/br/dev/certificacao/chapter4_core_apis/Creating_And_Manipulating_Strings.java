@@ -417,6 +417,7 @@ public class Creating_And_Manipulating_Strings {
                 creating_an_array_of_primitives();
                 creating_array_with_reference_variables();
                 using_an_array();
+                sorting();
 
         }
 
@@ -519,8 +520,30 @@ public class Creating_And_Manipulating_Strings {
                                 """);
 
                 System.out.println();
-                
 
         }
 
+        public void sorting() {
+
+                System.out.println("Ordenanso números");
+                int numeros[] = { 3, 2, 5, 6, 4, 10, 1, 9, 8, 7 };
+                System.out.println("Antes");
+                System.out.println(Arrays.toString(numeros));
+                System.out.println("Ordenando os números....");
+                Arrays.sort(numeros);
+                System.out.println("Números ordenados");
+                System.out.println(Arrays.toString(numeros));
+
+                System.out.println("===========================================================================");
+
+                System.out.println("Ordenando Strings");
+                String[] nomes = {"100","00","1", "0", "2", "Antônio", "Carlos", "anel", "Vaca", "2000", "3000"};
+                System.out.println("Antes");
+                System.out.println(Arrays.toString(nomes));
+                System.out.println("Processando.....");
+                Arrays.sort(nomes);
+                System.out.println("Depois.....");
+                System.out.println(Arrays.toString(nomes));
+
+        }
 }
