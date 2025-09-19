@@ -416,6 +416,7 @@ public class Creating_And_Manipulating_Strings {
 
                 creating_an_array_of_primitives();
                 creating_array_with_reference_variables();
+                using_an_array();
 
         }
 
@@ -438,37 +439,87 @@ public class Creating_And_Manipulating_Strings {
                         System.out.println(number);
                 }
 
-                //shortcut
-                int[] numero = {12,44,5};
+                // shortcut
+                int[] numero = { 12, 44, 5 };
 
-                //different tipes of write
+                // different tipes of write
 
                 int[] numeros;
-                int [] numeros1;
-                int []numeros2;
+                int[] numeros1;
+                int[] numeros2;
                 int numeros3[];
-                int numeros4 [];
-
-
+                int numeros4[];
 
         }
 
-        private void creating_array_with_reference_variables(){
+        private void creating_array_with_reference_variables() {
 
-                String[] bugs = {"cricket", "beetle", "ladybug"};
+                String[] bugs = { "cricket", "beetle", "ladybug" };
 
                 String[] alias = bugs;
 
-                String[] anotherArray = {"cricket", "beetle", "ladybug"};//present no livro da certificação java 21
+                String[] anotherArray = { "cricket", "beetle", "ladybug" };// present no livro da certificação java 21
 
                 System.out.println(bugs.equals(alias));
                 System.out.println(bugs.toString());
-                 System.out.println(bugs.equals(anotherArray));//present no livro da certificação java 21
+                System.out.println(bugs.equals(anotherArray));// present no livro da certificação java 21
 
-                 //imprimind array 
+                // impriminda array
 
                 System.out.println(Arrays.toString(bugs));
 
+        }
+
+        public void using_an_array() {
+
+                System.out.println("=================================================");
+                System.out.println("Using an array");
+                System.out.println("Creating, using and accessing");
+                System.out.println("Let's see the code below");
+                System.out.println("""
+                                                String[] animals = { "monkey", "chimp", "donkey" };
+                                System.out.println("Tamanho" + animals.length);
+                                System.out.println("Animal da primeira posição" + animals[0]);
+                                System.out.println("Animal da segunda posição" + animals[1]);
+                                System.out.println("Animal da terceira posição" + animals[2]);
+                                                """);
+
+                String[] animals = { "monkey", "chimp", "donkey" };
+                System.out.println("Tamanho" + animals.length);
+                System.out.println("Animal da primeira posição" + animals[0]);
+                System.out.println("Animal da segunda posição" + animals[1]);
+                System.out.println("Animal da terceira posição" + animals[2]);
+
+                System.out.println("================Watch out================");
+                System.out.println("Compile error");
+                System.out.println("""
+                                String[] animals = {"monkey","chimp", "donkey" }
+                                 System.out.println(animals.length());//Does not compile
+
+                                """);
+
+                System.out.println("""
+                                var birds = new String[6];
+                                System.out.println(birds.length);
+                                                     """);
+
+                var numbers = new int[10];
+                for (int i = 0; i < numbers.length; i++) {
+                        numbers[i] = i + 5;
+                }
+
+                for (int numero : numbers)
+                        System.out.println(numero);
+
+                System.out.println("ArrayIxdexOutofBoundsExepion");
+                System.out.println("""
+                                var numbers1 = new int[10];
+                                numbers1[10] = 50;
+                                numbers[numbers.length] = 3;
+                                """);
+
+                System.out.println();
+                
 
         }
 
