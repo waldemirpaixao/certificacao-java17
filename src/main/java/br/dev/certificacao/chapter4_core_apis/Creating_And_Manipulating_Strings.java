@@ -418,6 +418,7 @@ public class Creating_And_Manipulating_Strings {
                 creating_array_with_reference_variables();
                 using_an_array();
                 sorting();
+                searching();
 
         }
 
@@ -544,6 +545,29 @@ public class Creating_And_Manipulating_Strings {
                 Arrays.sort(nomes);
                 System.out.println("Depois.....");
                 System.out.println(Arrays.toString(nomes));
+
+        }
+
+
+        public void searching(){
+
+                System.out.println("Searching in an array");
+                System.out.println("Scenario 1: Target element fount in sorted Array - Result: Index of match");
+                int numeros[] = {1,3,5,7,9,11,13,15,17,19};
+                System.out.println(Arrays.binarySearch(numeros, 9));
+                System.out.println(Arrays.binarySearch(numeros, 1));
+                System.out.println(Arrays.binarySearch(numeros, 2));
+                System.out.println(Arrays.binarySearch(numeros, 0));
+                System.out.println(Arrays.binarySearch(numeros, 8));
+
+
+                System.out.println("Array is not sorted");
+                System.out.println("Scenario 3:unsorted Array -  Result: A surprise; this result is undefined");
+                
+                int[] numeros1 = {3,2,1};
+                System.out.println(Arrays.binarySearch(numeros1, 2));
+                System.out.println(Arrays.binarySearch(numeros1, 3));
+;
 
         }
 }
