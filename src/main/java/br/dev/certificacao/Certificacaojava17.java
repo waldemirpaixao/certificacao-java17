@@ -5,8 +5,12 @@
 package br.dev.certificacao;
 
 /**
- *
+ * Classe que estarta as outras classes do projeto de certificação Java 17.
  * @author waldemir
+ * @version 1.0
+ * @since 2025-08-19
+ * @see <a href="https://github.com/waldemirpaixao">GitHUb</a>
+ * 
  */
 public class Certificacaojava17 {
 
