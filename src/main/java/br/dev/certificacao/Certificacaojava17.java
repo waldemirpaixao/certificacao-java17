@@ -16,6 +16,9 @@ public class Certificacaojava17 {
 
     private static final String VERSAO = "1.0";
 
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         //Apresentação do projeto
         System.out.println("=========================================");

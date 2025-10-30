@@ -133,6 +133,9 @@ public class Applying_Switch_Statement {
 
     }
 
+    /** 
+     * @return int
+     */
     final int getCookies() {
         return 4;
     }
@@ -238,6 +241,9 @@ public class Applying_Switch_Statement {
 
     int day = 1;
 
+    /** 
+     * @param day
+     */
     public void pprintDayOfTheWeek(int day) {
 
         String dayOfWeek = switch (day) {
@@ -281,6 +287,9 @@ public class Applying_Switch_Statement {
 
     int mes = 1;
 
+    /** 
+     * @param mes
+     */
     public void printSeason(int mes) {
 
         String seasonOfTheYear = switch (mes) {
